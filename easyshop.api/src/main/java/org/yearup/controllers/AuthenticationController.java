@@ -50,6 +50,8 @@ public class AuthenticationController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = tokenProvider.createToken(authentication, false);
 
+
+
         try
         {
             User user = userDao.getByUserName(loginDto.getUsername());
@@ -90,9 +92,9 @@ public class AuthenticationController {
         }
         catch (Exception e)
         {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
+            e.printStackTrace();
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad." + e.getMessage());
         }
     }
-
 }
 

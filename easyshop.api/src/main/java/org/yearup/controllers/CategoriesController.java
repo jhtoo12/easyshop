@@ -93,11 +93,9 @@ public class CategoriesController {
         }
         try {
             categoryDao.delete(id);
-            return ResponseEntity.noContent().build();  // HTTP 204 No Content
+            return ResponseEntity.noContent().build();
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Unable to delete category.");
         }
     }
-
-
 }

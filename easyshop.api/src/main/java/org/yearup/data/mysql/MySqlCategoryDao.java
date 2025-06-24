@@ -122,7 +122,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
     @Override
     public void delete(int categoryId)
     {
-        String deleteProductsSql = "DELETE FROM products WHERE category_id = ?";
+
         String deleteCategorySql = "DELETE FROM categories WHERE category_id = ?";
 
         try (Connection connection = getConnection())
@@ -130,13 +130,8 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
             // Disable auto-commit for transaction control
             connection.setAutoCommit(false);
 
-            try (PreparedStatement deleteProductsStmt = connection.prepareStatement(deleteProductsSql);
-                 PreparedStatement deleteCategoryStmt = connection.prepareStatement(deleteCategorySql))
+            try (PreparedStatement deleteCategoryStmt = connection.prepareStatement(deleteCategorySql))
             {
-                // Delete products in the category first
-                deleteProductsStmt.setInt(1, categoryId);
-                deleteProductsStmt.executeUpdate();
-
                 // Then delete the category itself
                 deleteCategoryStmt.setInt(1, categoryId);
                 int rowsDeleted = deleteCategoryStmt.executeUpdate();

@@ -14,7 +14,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
-@RestController
+@RestController // corrected the annotation to @RestController
 @RequestMapping("/categories") // fixed typo from "catergories"
 @CrossOrigin
 public class CategoriesController {

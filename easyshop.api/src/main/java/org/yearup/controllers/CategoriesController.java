@@ -10,8 +10,6 @@ import org.yearup.data.ProductDao;
 import org.yearup.models.Category;
 import org.yearup.models.Product;
 import org.springframework.http.ResponseEntity;
-
-
 import java.util.List;
 
 @RestController // corrected the annotation to @RestController

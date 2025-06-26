@@ -3,7 +3,6 @@ package org.yearup.data.mysql;
 import org.springframework.stereotype.Component;
 import org.yearup.data.CategoryDao;
 import org.yearup.models.Category;
-
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
@@ -39,7 +38,6 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
 
         return categories;
     }
-
     @Override
     public Category getById(int categoryId)
     {
@@ -66,8 +64,6 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
         // Return null if not found or error, so controller can return 404 or handle error properly
         return null;
     }
-
-
     @Override
     public Category create(Category category)
     {
@@ -98,7 +94,6 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
 
         return null;
     }
-
     @Override
     public void update(int categoryId, Category category)
     {
@@ -118,7 +113,6 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
             throw new RuntimeException("Error updating category", e);
         }
     }
-
     @Override
     public void delete(int categoryId)
     {
@@ -161,8 +155,6 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
             throw new RuntimeException("Database error during delete operation", e);
         }
     }
-
-
     private Category mapRow(ResultSet row) throws SQLException
     {
         int categoryId = row.getInt("category_id");

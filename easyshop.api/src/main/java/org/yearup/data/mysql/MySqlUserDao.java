@@ -20,7 +20,6 @@ public class MySqlUserDao extends MySqlDaoBase implements UserDao
         super(dataSource);
     }
 
-
     @Override
     public User create(User newUser)
     {
@@ -47,7 +46,6 @@ public class MySqlUserDao extends MySqlDaoBase implements UserDao
             throw new RuntimeException(e);
         }
     }
-
     @Override
     public List<User> getAll()
     {
@@ -73,7 +71,6 @@ public class MySqlUserDao extends MySqlDaoBase implements UserDao
 
         return users;
     }
-
     @Override
     public User getUserById(int id)
     {
@@ -97,7 +94,6 @@ public class MySqlUserDao extends MySqlDaoBase implements UserDao
         }
         return null;
     }
-
     @Override
     public User getByUserName(String username)
     {
@@ -125,7 +121,6 @@ public class MySqlUserDao extends MySqlDaoBase implements UserDao
 
         return null;
     }
-
     @Override
     public int getIdByUsername(String username)
     {
@@ -138,7 +133,6 @@ public class MySqlUserDao extends MySqlDaoBase implements UserDao
 
         return -1;
     }
-
     @Override
     public boolean exists(String username)
     {

@@ -3,7 +3,6 @@ package org.yearup.data.mysql;
 import org.springframework.stereotype.Component;
 import org.yearup.models.Product;
 import org.yearup.data.ProductDao;
-
 import javax.sql.DataSource;
 import java.math.BigDecimal;
 import java.sql.*;
@@ -66,10 +65,8 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao
         {
             throw new RuntimeException("Error searching products", e);
         }
-
         return products;
     }
-
     @Override
     public List<Product> listByCategoryId(int categoryId)
     {
@@ -95,11 +92,8 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao
         {
             throw new RuntimeException(e);
         }
-
         return products;
     }
-
-
     @Override
     public Product getById(int productId)
     {
@@ -122,7 +116,6 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao
         }
         return null;
     }
-
     @Override
     public Product create(Product product)
     {
@@ -163,7 +156,6 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao
         }
         return null;
     }
-
     @Override
     public void update(int productId, Product product)
     {
@@ -198,7 +190,6 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao
             throw new RuntimeException(e);
         }
     }
-
     @Override
     public void delete(int productId)
     {
@@ -218,7 +209,6 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao
             throw new RuntimeException(e);
         }
     }
-
     protected static Product mapRow(ResultSet row) throws SQLException
     {
         int productId = row.getInt("product_id");

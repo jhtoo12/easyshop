@@ -20,5 +20,11 @@ public interface ShoppingCartDao {
 
     ShoppingCartItem getCartItemByUserIdAndProductId(int id, int productId);
 
+    ShoppingCart getCart(int userId);
+
+    ShoppingCart addProduct(int userId, int productId);
+
+    ShoppingCart updateProduct(int userId, int productId, int quantity);
+
     // add additional method signatures here
 }
